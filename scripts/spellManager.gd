@@ -9,10 +9,7 @@ var dt = 0
 
 @export var jerboa : JerboaPlayer
 
-var Spells = {
-	[0,1,0] : preload("res://scenes/spells/superjump.tscn"),
-	[1,0,0] : preload("res://scenes/spells/stairwaycreation.tscn"),
-}
+
 
 func _process(delta: float) -> void:
 	dt += delta
@@ -23,12 +20,12 @@ func _process(delta: float) -> void:
 			inputStream.append(1)
 	
 	if Input.is_action_just_pressed("down") and inputStream.size() > 0:
-		if Spells.get(inputStream,null):
-			var new = Spells.get(inputStream).instantiate()
-			new.jerboa = jerboa
-			add_sibling(new)
+		if GlobalVars.Spells.get(inputStream,null):
+			if GlobalVars.unlockedSpells.has(inputStream):
+				var new = GlobalVars.Spells.get(inputStream).instantiate()
+				new.jerboa = jerboa
+				add_sibling(new)
 		
-		print("cast")
 		inputStream.clear()
 		for I in get_children(): I.queue_free()
 	
