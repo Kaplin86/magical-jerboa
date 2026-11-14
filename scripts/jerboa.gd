@@ -18,3 +18,8 @@ func _physics_process(delta: float) -> void:
 	
 	$Icon.flip_h = velocity.x < 0
 	move_and_slide()
+	
+	var dist = lerp(0.0,-0.5,(global_position.distance_to($Camera2D.get_screen_center_position()) / 700.0))
+	#print($Camera2D.get_screen_center_position())
+	$Camera2D.zoom = lerp($Camera2D.zoom, Vector2.ONE * (dist + 1), delta * 3)
+	
