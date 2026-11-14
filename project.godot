@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Magical Jerboa"
-run/main_scene="uid://dfbfddv37wwsi"
+run/main_scene="uid://qncvxxlewi13"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -74,4 +74,5 @@ b={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

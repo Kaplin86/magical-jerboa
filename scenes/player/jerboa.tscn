@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://djpj3uvtlnmfa"]
+
+[ext_resource type="Script" uid="uid://wagjw523qaxp" path="res://scripts/jerboa.gd" id="1_38uba"]
+[ext_resource type="Texture2D" uid="uid://blpre7sj5d5qq" path="res://tempAssetsReplaceLater/largest-jerb.png" id="2_c6qlh"]
+[ext_resource type="Texture2D" uid="uid://5yl3tp6intq6" path="res://tempAssetsReplaceLater/magician-41104_1280.png" id="3_r3oju"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kxuq"]
+radius = 34.0
+height = 118.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=587312162]
+script = ExtResource("1_38uba")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=1798339457]
+remote_path = NodePath("../../Node2D")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1861237874]
+scale = Vector2(0.3563478, 0.3563478)
+texture = ExtResource("2_c6qlh")
+
+[node name="Magician411041280" type="Sprite2D" parent="Icon" unique_id=2145412780]
+position = Vector2(126.2811, -112.24987)
+scale = Vector2(2.62, 2.62)
+texture = ExtResource("3_r3oju")
+region_enabled = true
+region_rect = Rect2(0, 0, 116, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1821167353]
+shape = SubResource("CapsuleShape2D_4kxuq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=55762337]
+position_smoothing_enabled = true

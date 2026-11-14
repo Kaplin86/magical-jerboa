@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 			new.jerboa = jerboa
 			add_sibling(new)
 		
+		print("cast")
 		inputStream.clear()
 		for I in get_children(): I.queue_free()
 	

@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bwocctxqtkuur"]
+
+[ext_resource type="Texture2D" uid="uid://48i25xi4mnf2" path="res://art/wood.png" id="1_hopku"]
+[ext_resource type="Texture2D" uid="uid://cpx5gkeslh2fr" path="res://art/carpetwood.png" id="2_8vh44"]
+[ext_resource type="Script" uid="uid://cpb23m2i0m2f8" path="res://scripts/zoomTrigger.gd" id="3_8vh44"]
+
+[sub_resource type="Gradient" id="Gradient_62yky"]
+offsets = PackedFloat32Array(0, 0.448, 1)
+colors = PackedColorArray(0, 0, 0, 0.32156864, 0, 0, 0, 0.05882353, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mm1bc"]
+frequency = 0.0106
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8vh44"]
+noise = SubResource("FastNoiseLite_mm1bc")
+color_ramp = SubResource("Gradient_62yky")
+seamless = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(843.5, 431)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk65x"]
+size = Vector2(43, 402)
+
+[node name="InbetweenRoom" type="Node2D" unique_id=142929678]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=971323436]
+self_modulate = Color(0.6536162, 0.6536162, 0.6536162, 1)
+offset_left = -417.0
+offset_top = -238.0
+offset_right = 437.0
+offset_bottom = 190.0
+texture = ExtResource("1_hopku")
+region_rect = Rect2(0, 0, 116.53415, 81.42607)
+patch_margin_left = 8
+patch_margin_top = 16
+patch_margin_right = 14
+patch_margin_bottom = 13
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect" unique_id=1679441805]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("NoiseTexture2D_8vh44")
+stretch_mode = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=967874731]
+offset_left = -421.0
+offset_top = 182.0
+offset_right = 436.0
+offset_bottom = 2509.0
+texture = ExtResource("2_8vh44")
+region_rect = Rect2(0, 0, 114.42381, 81.42607)
+patch_margin_left = 8
+patch_margin_top = 35
+patch_margin_right = 10
+patch_margin_bottom = 13
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=410349252]
+offset_left = -421.0
+offset_top = -2532.0
+offset_right = 436.0
+offset_bottom = -205.0
+texture = ExtResource("2_8vh44")
+region_rect = Rect2(0, 0, 114.42381, 81.42607)
+patch_margin_left = 8
+patch_margin_top = 35
+patch_margin_right = 10
+patch_margin_bottom = 13
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1863257967]
+position = Vector2(427, -25)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=423370055]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=362338044]
+position = Vector2(4.25, 400.5)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=644645259]
+position = Vector2(5, -429)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=393896473]
+position = Vector2(-393, -16)
+script = ExtResource("3_8vh44")
+zoom = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=721198381]
+shape = SubResource("RectangleShape2D_rk65x")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1387867911]
+position = Vector2(405, -16)
+script = ExtResource("3_8vh44")
+zoom = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=300450775]
+shape = SubResource("RectangleShape2D_rk65x")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D2" to="Area2D2" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

@@ -5,6 +5,7 @@ var jumpPower = 3
 var horizSpeed = 300
 
 var left = false
+var flatlineZoom = 1
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
@@ -20,10 +21,10 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity += get_gravity()
 	
-	$Icon.flip_h = velocity.x < 0
+	$Icon.scale.x = lerp(-0.356,0.356,!left)
 	move_and_slide()
 	
 	var dist = lerp(0.0,-0.5,(global_position.distance_to($Camera2D.get_screen_center_position()) / 700.0))
 	#print($Camera2D.get_screen_center_position())
-	$Camera2D.zoom = lerp($Camera2D.zoom, Vector2.ONE * (dist + 1), delta * 3)
+	$Camera2D.zoom = lerp($Camera2D.zoom, Vector2.ONE * (dist + flatlineZoom), delta * 3)
 	
