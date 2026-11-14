@@ -10,7 +10,8 @@ var dt = 0
 @export var jerboa : JerboaPlayer
 
 var Spells = {
-	[0,1,0] : preload("res://scenes/spells/superjump.tscn")
+	[0,1,0] : preload("res://scenes/spells/superjump.tscn"),
+	[1,0,0] : preload("res://scenes/spells/stairwaycreation.tscn"),
 }
 
 func _process(delta: float) -> void:

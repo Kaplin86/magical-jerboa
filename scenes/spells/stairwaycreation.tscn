@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://crb4kk5v1xs6s"]
+
+[ext_resource type="Script" uid="uid://c73bsg0ga53qq" path="res://scripts/stairwaycreation.gd" id="1_4a13d"]
+[ext_resource type="Texture2D" uid="uid://btgbchle10jm5" path="res://icon.svg" id="2_aiuc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+
+[node name="Node2D" type="Node2D" unique_id=1049677670]
+script = ExtResource("1_4a13d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=574735263]
+position = Vector2(0, 24)
+scale = Vector2(-11.889122, 1.3701925)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=58472259]
+scale = Vector2(0.15664913, 0.15664913)
+texture = ExtResource("2_aiuc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1814547504]
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=884384889]
+position = Vector2(2.0000038, -18)
+scale = Vector2(-8.430237, 1.5580555)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=45432456]
+scale = Vector2(0.15664913, 0.15664913)
+texture = ExtResource("2_aiuc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1342603529]
+shape = SubResource("RectangleShape2D_4kxuq")
