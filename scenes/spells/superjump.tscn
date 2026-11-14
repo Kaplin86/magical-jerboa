@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cjmkdwxvi0uhx"]
+
+[ext_resource type="Script" uid="uid://c7l4bsphpplwc" path="res://scripts/superjump.gd" id="1_av28b"]
+
+[node name="Node2D" type="Node2D" unique_id=1080745487]
+script = ExtResource("1_av28b")

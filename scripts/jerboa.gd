@@ -1,7 +1,8 @@
 extends CharacterBody2D
+class_name JerboaPlayer
 
-var jumpPower = 2.0
-var horizSpeed = 200
+var jumpPower = 3
+var horizSpeed = 300
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
@@ -16,5 +17,4 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity()
 	
 	$Icon.flip_h = velocity.x < 0
-	print(velocity)
 	move_and_slide()

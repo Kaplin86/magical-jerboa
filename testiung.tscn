@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://btgbchle10jm5" path="res://icon.svg" id="1_ydm5q"]
 [ext_resource type="Script" uid="uid://wagjw523qaxp" path="res://scripts/jerboa.gd" id="2_tv4r8"]
 [ext_resource type="Texture2D" uid="uid://blpre7sj5d5qq" path="res://tempAssetsReplaceLater/largest-jerb.png" id="3_e7e8d"]
+[ext_resource type="Texture2D" uid="uid://5yl3tp6intq6" path="res://tempAssetsReplaceLater/magician-41104_1280.png" id="4_kucxm"]
+[ext_resource type="Script" uid="uid://vymndjqb0srr" path="res://scripts/spellManager.gd" id="5_o3a68"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
 size = Vector2(129.72682, 131)
@@ -24,13 +26,51 @@ texture = ExtResource("1_ydm5q")
 position = Vector2(0.107925415, -2.5)
 shape = SubResource("RectangleShape2D_4kxuq")
 
+[node name="Icon2" type="Sprite2D" parent="." unique_id=836949443]
+position = Vector2(1772, 546)
+scale = Vector2(9.265625, 1)
+texture = ExtResource("1_ydm5q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon2" unique_id=519589783]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon2/StaticBody2D" unique_id=1948015217]
+position = Vector2(0.107925415, -2.5)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=821920323]
+position = Vector2(2959, 434)
+scale = Vector2(9.265625, 1)
+texture = ExtResource("1_ydm5q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon3" unique_id=1472242760]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon3/StaticBody2D" unique_id=168637398]
+position = Vector2(0.107925415, -2.5)
+shape = SubResource("RectangleShape2D_4kxuq")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1022999644]
-position = Vector2(446, 197)
+position = Vector2(577, 323)
 script = ExtResource("2_tv4r8")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D" unique_id=337905870]
+remote_path = NodePath("../../Node2D")
 
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D" unique_id=1747218703]
 scale = Vector2(0.3563478, 0.3563478)
 texture = ExtResource("3_e7e8d")
 
+[node name="Magician411041280" type="Sprite2D" parent="CharacterBody2D/Icon" unique_id=834026802]
+position = Vector2(98.21864, -140.31235)
+scale = Vector2(0.24098268, 0.15015292)
+texture = ExtResource("4_kucxm")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=651467562]
 shape = SubResource("CapsuleShape2D_4kxuq")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1476995843]
+position_smoothing_enabled = true
+
+[node name="Node2D" type="Node2D" parent="." unique_id=135685244 node_paths=PackedStringArray("jerboa")]
+position = Vector2(577, 323)
+script = ExtResource("5_o3a68")
+jerboa = NodePath("../CharacterBody2D")
