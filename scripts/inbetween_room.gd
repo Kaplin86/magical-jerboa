@@ -2,6 +2,8 @@ extends Node2D
 
 @export var itemAreas : Array[UpgradeUnlockers] = []
 
+var haveThings = true
+
 func _ready() -> void:
 	var options = GlobalVars.getGainableSpeller()
 	var choice0 = options.pick_random()
@@ -15,6 +17,9 @@ func _ready() -> void:
 	var valid = false
 
 	for I in itemAreas:
+		if !haveThings:
+			I.queue_free()
+			continue
 		var option = full.get(itemAreas.find(I))
 		if option != null:
 			I.upgrade = option
@@ -24,6 +29,8 @@ func _ready() -> void:
 			I.queue_free()
 	
 	if !valid:
+		_onchosen(-1)
+	elif !haveThings:
 		_onchosen(-1)
 
 func _process(delta: float) -> void:
@@ -60,6 +67,7 @@ func _onchosen(upgrade : int) -> void:
 		node.global_position = $Exit.global_position - node.find_child("EntrancePoint").position
 		
 		var newInbetween = load("res://scenes/inbetween_room.tscn").instantiate()
+		newInbetween.haveThings = !haveThings
 		add_child(newInbetween)
 		newInbetween.global_position = node.find_child("ExitPoint").global_position - newInbetween.find_child("Entry").position
 		

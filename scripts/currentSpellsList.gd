@@ -10,8 +10,9 @@ func render():
 	
 	for I in GlobalVars.SpellSource:
 		if I["code"] in GlobalVars.unlockedSpells:
-			var newcode =RichTextLabel.new()
+			var newcode :=RichTextLabel.new()
 			newcode.bbcode_enabled = true
 			newcode.fit_content = true
 			newcode.text = I["desc"]
 			$VBoxContainer.add_child(newcode)
+			newcode.add_theme_constant_override("outline_size",16)

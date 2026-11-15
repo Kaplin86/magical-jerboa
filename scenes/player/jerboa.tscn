@@ -31,3 +31,21 @@ shape = SubResource("CapsuleShape2D_4kxuq")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=55762337]
 process_mode = 3
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=110715030]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=835384178]
+offset_left = -542.0
+offset_top = -283.0
+offset_right = -306.0
+offset_bottom = 270.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1920049314]
+offset_left = -551.0
+offset_top = -263.0
+offset_right = -511.0
+offset_bottom = -223.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=411369318]
+offset_right = 40.0
+offset_bottom = 40.0

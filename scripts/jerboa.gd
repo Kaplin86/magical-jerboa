@@ -21,7 +21,9 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity += get_gravity()
 	
-	$Icon.scale.x = lerp(-0.356,0.356,!left) 
+	
+
+	$Icon.scale.x = lerp(-1.0,1.0,!left) * 0.365
 	var lastVelocity = velocity
 	move_and_slide()
 	
