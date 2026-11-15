@@ -1,20 +1,61 @@
 [gd_scene format=3 uid="uid://crb4kk5v1xs6s"]
 
 [ext_resource type="Script" uid="uid://c73bsg0ga53qq" path="res://scripts/stairwaycreation.gd" id="1_4a13d"]
-[ext_resource type="Texture2D" uid="uid://btgbchle10jm5" path="res://icon.svg" id="2_aiuc6"]
+[ext_resource type="Texture2D" uid="uid://bxfxagedwy05l" path="res://art/ninceslice.png" id="2_aiuc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
 
 [node name="Node2D" type="Node2D" unique_id=1049677670]
 script = ExtResource("1_4a13d")
 
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=280112885]
+modulate = Color(1.7770933, 1.7770933, 1.7770933, 1)
+offset_left = -192.0
+offset_top = 8.0
+offset_right = 191.0
+offset_bottom = 59.0
+texture = ExtResource("2_aiuc6")
+region_rect = Rect2(2.78, 1.113, 134.75, 95.603)
+patch_margin_left = 10
+patch_margin_top = 28
+patch_margin_right = 6
+patch_margin_bottom = 23
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=467759033]
+modulate = Color(1.7770933, 1.7770933, 1.7770933, 1)
+offset_left = -127.0
+offset_top = -39.0
+offset_right = 132.0
+offset_bottom = 12.0
+texture = ExtResource("2_aiuc6")
+region_rect = Rect2(2.78, 1.113, 134.75, 95.603)
+patch_margin_left = 10
+patch_margin_top = 28
+patch_margin_right = 6
+patch_margin_bottom = 23
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=437096824]
+modulate = Color(1.7770933, 1.7770933, 1.7770933, 1)
+offset_left = -91.0
+offset_top = -88.0
+offset_right = 97.0
+offset_bottom = -37.0
+texture = ExtResource("2_aiuc6")
+region_rect = Rect2(2.78, 1.113, 134.75, 95.603)
+patch_margin_left = 10
+patch_margin_top = 28
+patch_margin_right = 6
+patch_margin_bottom = 23
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=574735263]
 position = Vector2(0, 24)
 scale = Vector2(-19.021652, 1.4455985)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=58472259]
-scale = Vector2(0.15664913, 0.15664913)
-texture = ExtResource("2_aiuc6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1814547504]
 shape = SubResource("RectangleShape2D_4kxuq")
@@ -23,20 +64,12 @@ shape = SubResource("RectangleShape2D_4kxuq")
 position = Vector2(2.0000038, -18)
 scale = Vector2(-12.769768, 1.1655949)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=45432456]
-scale = Vector2(0.15664913, 0.15664913)
-texture = ExtResource("2_aiuc6")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1342603529]
 shape = SubResource("RectangleShape2D_4kxuq")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=317816319]
 position = Vector2(2, -59)
 scale = Vector2(-8.681521, 1.3977951)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=1620073780]
-scale = Vector2(0.15664913, 0.15664913)
-texture = ExtResource("2_aiuc6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=749757838]
 shape = SubResource("RectangleShape2D_4kxuq")

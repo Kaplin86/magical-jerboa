@@ -2,7 +2,7 @@ extends Node2D
 
 var inputStream = []
 
-var pallete = [Color.RED * 3,Color.AQUA*3]
+@export var pallete := [Color.RED,Color.AQUA]
 
 var spellDist = 200
 var dt = 0
@@ -37,7 +37,8 @@ func render(delta):
 		var newNode = Sprite2D.new()
 		add_child(newNode)
 		newNode.modulate = pallete[inputStream[get_children().size() - 1]]
-		newNode.texture = load("res://icon.svg")
+		newNode.texture = load("res://art/ball.png")
+		newNode.scale = Vector2.ONE * 5.6
 	
 	for I in range(get_children().size()):
 		var angle = I / float(inputStream.size() - 1)

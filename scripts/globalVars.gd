@@ -35,7 +35,8 @@ var rooms = [
 	{"neededSpells":[[0,1,0]],"path":"res://scenes/rooms/bigJumpRoomThree.tscn"},
 	{"neededSpells":[[1,0,0]],"path":"res://scenes/rooms/stairsroom1.tscn"},
 	{"neededSpells":[[1,0,0]],"path":"res://scenes/rooms/stairsroom2.tscn"},
-	{"neededSpells":[[1,0,0,1,0]],"path":"res://scenes/rooms/grapplinghookroom1.tscn"}
+	{"neededSpells":[[1,0,0,1,0]],"path":"res://scenes/rooms/grapplinghookroom1.tscn"},
+	{"neededSpells":[[1,0,0,1,0],[0,1,0]],"path":"res://scenes/rooms/grapplejump.tscn"}
 ]
 
 func _ready() -> void:

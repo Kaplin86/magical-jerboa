@@ -241,7 +241,7 @@ shape = SubResource("RectangleShape2D_5bhb5")
 [node name="Area2D" type="Area2D" parent="." unique_id=1912500670]
 position = Vector2(-782, -115)
 script = ExtResource("4_4fv88")
-zoom = 0.4
+zoom = 0.6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=30821577]
 shape = SubResource("RectangleShape2D_mti6b")

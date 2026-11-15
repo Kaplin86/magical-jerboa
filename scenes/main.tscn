@@ -20,6 +20,7 @@ collision_mask = 3
 [node name="Node2D" type="Node2D" parent="." unique_id=173448424 node_paths=PackedStringArray("jerboa")]
 position = Vector2(-661, 433)
 script = ExtResource("3_jyhfs")
+pallete = [Color(1, 0, 0, 1), Color(0, 0.3529412, 1, 1)]
 jerboa = NodePath("../CharacterBody2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1604031558]
