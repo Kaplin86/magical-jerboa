@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c86gqxtknyspp"]
+
+[ext_resource type="Script" uid="uid://dmocgibgl5b4i" path="res://scripts/magnetization.gd" id="1_fpi60"]
+
+[node name="Magnetization" type="Node2D" unique_id=433439706]
+script = ExtResource("1_fpi60")

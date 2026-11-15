@@ -8,3 +8,6 @@ script = ExtResource("1_gi1xe")
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1469112870]
 position = Vector2(0, -58)
 target_position = Vector2(0, -30000)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=121435957]
+points = PackedVector2Array(0, 0, 0, 0)

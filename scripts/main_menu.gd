@@ -3,6 +3,8 @@ extends Node2D
 var dt = 0.0
 
 func _on_button_pressed() -> void:
+	GlobalVars.unlockedSpells = []
+	GlobalVars.playedRooms = []
 	Transition.transition("res://scenes/main.tscn")
 
 func _process(delta: float) -> void:

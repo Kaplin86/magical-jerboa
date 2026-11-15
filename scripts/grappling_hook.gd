@@ -17,6 +17,10 @@ func _process(delta: float) -> void:
 		dt *= 1.2
 		jerboa.velocity = jerboa.global_position.direction_to(target) * 800 * dt
 		
+		$Line2D.global_position = Vector2.ZERO
+		$Line2D.set_point_position(0,jerboa.global_position)
+		$Line2D.set_point_position(1,target)
+		
 		if jerboa.global_position.distance_squared_to(target) < 4000:
 			target = null
 			jerboa.process_mode = Node.PROCESS_MODE_DISABLED

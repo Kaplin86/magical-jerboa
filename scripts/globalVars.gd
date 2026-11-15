@@ -28,6 +28,12 @@ var SpellSource = [
 	"desc":"[[color=blue]B[/color],[color=red]A[/color],[color=red]A[/color],[color=blue]B[/color],[color=red]A[/color]] Brings you UP!",
 	"code" : [1,0,0,1,0],
 	"scene" : preload("res://scenes/spells/grapplingHook.tscn")
+	},
+	{"name":"Magnetization",
+	"texture":preload("res://art/upgrade/magnet.png"),
+	"desc":"[[color=blue]B[/color],[color=blue]B[/color],[color=red]A[/color],[color=red]A[/color],[color=blue]B[/color],[color=blue]B[/color],[color=red]A[/color],[color=blue]B[/color]] Magnetize metal things towards you",
+	"code" : [1,1,0,0,1,1,0,1],
+	"scene" : preload("res://scenes/spells/magnetization.tscn")
 	}
 	
 ]
@@ -40,7 +46,10 @@ var rooms = [
 	{"neededSpells":[[1,0,0]],"path":"res://scenes/rooms/stairsroom2.tscn"},
 	{"neededSpells":[[1,0,0,1,0]],"path":"res://scenes/rooms/grapplinghookroom1.tscn"},
 	{"neededSpells":[[1,0,0,1,0]],"path":"res://scenes/rooms/grapplinghookroom2.tscn"},
-	{"neededSpells":[[1,0,0,1,0],[0,1,0]],"path":"res://scenes/rooms/grapplejump.tscn"}
+	{"neededSpells":[[1,0,0,1,0],[0,1,0]],"path":"res://scenes/rooms/grapplejump.tscn"},
+	{"neededSpells":[[1,1,0,0,1,1,0,1]],"path":"res://scenes/rooms/magnetOne.tscn"},
+	{"neededSpells":[[1,1,0,0,1,1,0,1]],"path":"res://scenes/rooms/magnetTwo.tscn"}
+
 ]
 
 func _ready() -> void:

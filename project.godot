@@ -24,10 +24,16 @@ Transition="*uid://vxysnnnw4gry"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/canvas_textures/default_texture_filter=0
+window/default_gravity=490.0
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+magnetable=""
 
 [input]
 

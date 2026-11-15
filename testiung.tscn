@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://dfbfddv37wwsi"]
 
-[ext_resource type="PackedScene" uid="uid://bbbarxkdv7gjv" path="res://scenes/rooms/stairsroom1.tscn" id="1_e7e8d"]
+[ext_resource type="PackedScene" uid="uid://ch84luh7fagce" path="res://scenes/rooms/magnetTwo.tscn" id="1_e7e8d"]
 [ext_resource type="PackedScene" uid="uid://djpj3uvtlnmfa" path="res://scenes/player/jerboa.tscn" id="4_o3a68"]
 [ext_resource type="Script" uid="uid://vymndjqb0srr" path="res://scripts/spellManager.gd" id="5_o3a68"]
 
 [node name="Node2D" type="Node2D" unique_id=1532642784]
 
-[node name="Stairsroom1" parent="." unique_id=455274221 instance=ExtResource("1_e7e8d")]
-position = Vector2(24, 105)
+[node name="BigJumpRoom" parent="." unique_id=684584116 instance=ExtResource("1_e7e8d")]
+position = Vector2(558, 120)
 
 [node name="CharacterBody2D" parent="." unique_id=587312162 instance=ExtResource("4_o3a68")]
-position = Vector2(577, 323)
+position = Vector2(124, -9)
 collision_layer = 3
 collision_mask = 3
 
 [node name="Node2D" type="Node2D" parent="." unique_id=135685244 node_paths=PackedStringArray("jerboa")]
-position = Vector2(577, 323)
+position = Vector2(124, -9)
 script = ExtResource("5_o3a68")
 jerboa = NodePath("../CharacterBody2D")
