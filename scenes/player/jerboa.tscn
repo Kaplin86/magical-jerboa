@@ -29,4 +29,5 @@ region_rect = Rect2(0, 0, 116, 75)
 shape = SubResource("CapsuleShape2D_4kxuq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=55762337]
+process_mode = 3
 position_smoothing_enabled = true

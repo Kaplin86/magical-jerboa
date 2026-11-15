@@ -36,5 +36,7 @@ func _onchosen(upgrade : int) -> void:
 		var newInbetween = load("res://scenes/inbetween_room.tscn").instantiate()
 		add_child(newInbetween)
 		newInbetween.global_position = node.find_child("ExitPoint").global_position - newInbetween.find_child("Entry").position
+		
+		GlobalVars.playedRooms.append(chosenRoom)
 	
 	$ColorRect.queue_free()

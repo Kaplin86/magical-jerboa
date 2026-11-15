@@ -1,0 +1,638 @@
+[gd_scene format=3 uid="uid://bbbarxkdv7gjv"]
+
+[ext_resource type="Texture2D" uid="uid://ct0vgv2anombl" path="res://art/graybricks.png" id="1_ge6rk"]
+[ext_resource type="Texture2D" uid="uid://bxfxagedwy05l" path="res://art/ninceslice.png" id="2_j4pef"]
+[ext_resource type="Script" uid="uid://cpb23m2i0m2f8" path="res://scripts/zoomTrigger.gd" id="3_8v37x"]
+
+[sub_resource type="Gradient" id="Gradient_r2y5t"]
+offsets = PackedFloat32Array(0, 0.448, 1)
+colors = PackedColorArray(0, 0, 0, 0.12941177, 0.04, 0.04, 0.04, 0.1242353, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_38p6l"]
+frequency = 0.0106
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j4pef"]
+noise = SubResource("FastNoiseLite_38p6l")
+color_ramp = SubResource("Gradient_r2y5t")
+seamless = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8v37x"]
+size = Vector2(3924, 3264)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4pef"]
+size = Vector2(1802, 3350.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ler8"]
+size = Vector2(1802, 2809.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_in61x"]
+size = Vector2(43, 402)
+
+[node name="Stairsroom1" type="Node2D" unique_id=455274221]
+
+[node name="Graybricks" type="TextureRect" parent="." unique_id=298531982]
+offset_left = -880.0
+offset_top = -5119.0
+offset_right = 8220.0
+offset_bottom = 1500.0
+texture = ExtResource("1_ge6rk")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Graybricks" unique_id=219503306]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("NoiseTexture2D_j4pef")
+stretch_mode = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=1245162490]
+offset_left = -904.0
+offset_top = 596.0
+offset_right = 3083.0
+offset_bottom = 3719.0
+texture = ExtResource("2_j4pef")
+region_rect = Rect2(2.78, 1.113, 134.75, 95.603)
+patch_margin_left = 10
+patch_margin_top = 28
+patch_margin_right = 6
+patch_margin_bottom = 23
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1925863874]
+offset_left = -2685.0
+offset_top = -3734.0
+offset_right = -820.0
+offset_bottom = -284.0
+texture = ExtResource("2_j4pef")
+region_rect = Rect2(2.78, 1.113, 134.75, 95.603)
+patch_margin_left = 10
+patch_margin_top = 28
+patch_margin_right = 6
+patch_margin_bottom = 23
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=1788163785]
+offset_left = 3012.0
+offset_top = -215.0
+offset_right = 4877.0
+offset_bottom = 6040.0
+texture = ExtResource("2_j4pef")
+region_rect = Rect2(2.78, 1.113, 134.75, 95.603)
+patch_margin_left = 10
+patch_margin_top = 28
+patch_margin_right = 6
+patch_margin_bottom = 23
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=793410469]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1082325654]
+position = Vector2(1093, 2220)
+shape = SubResource("RectangleShape2D_8v37x")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=851897168]
+position = Vector2(-1743, -1979.25)
+shape = SubResource("RectangleShape2D_j4pef")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=699918580]
+position = Vector2(3943, 1224)
+shape = SubResource("RectangleShape2D_5ler8")
+
+[node name="EntrancePoint" type="Marker2D" parent="." unique_id=834551861]
+position = Vector2(-872, 310)
+
+[node name="ExitPoint" type="Marker2D" parent="." unique_id=2080699888]
+position = Vector2(4806, -432)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2006953878]
+position = Vector2(-764, 358)
+script = ExtResource("3_8v37x")
+zoom = 0.735
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=875231785]
+shape = SubResource("RectangleShape2D_in61x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1528780507]
+position = Vector2(5454, -808)
+shape = SubResource("RectangleShape2D_in61x")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=284183242]
+position = Vector2(3202, -972)
+
+[node name="ColorRect" type="ColorRect" parent="Node2D" unique_id=845185968]
+offset_left = -55.0
+offset_top = -122.0
+offset_right = 33.0
+offset_bottom = 66.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect2" type="ColorRect" parent="Node2D" unique_id=220781521]
+offset_left = -183.0
+offset_top = -16.000122
+offset_right = -95.0
+offset_bottom = 171.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect4" type="ColorRect" parent="Node2D" unique_id=175090078]
+offset_left = -55.872803
+offset_top = 91.4646
+offset_right = 32.127197
+offset_bottom = 159.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect3" type="ColorRect" parent="Node2D" unique_id=1838417363]
+offset_left = 123.999756
+offset_top = -71.99988
+offset_right = 211.99976
+offset_bottom = 116.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect5" type="ColorRect" parent="Node2D" unique_id=1158469494]
+offset_left = -55.0
+offset_top = -687.0
+offset_right = 33.0
+offset_bottom = -499.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect6" type="ColorRect" parent="Node2D" unique_id=1581961209]
+offset_left = -183.0
+offset_top = -581.0001
+offset_right = -95.0
+offset_bottom = -393.00012
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect7" type="ColorRect" parent="Node2D" unique_id=1504704657]
+offset_left = -55.872803
+offset_top = -473.5354
+offset_right = 32.127197
+offset_bottom = -405.34424
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect8" type="ColorRect" parent="Node2D" unique_id=1602790445]
+offset_left = 123.999756
+offset_top = -636.9999
+offset_right = 211.99976
+offset_bottom = -448.99988
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect9" type="ColorRect" parent="Node2D" unique_id=311212357]
+offset_left = -72.0
+offset_top = -1119.0
+offset_right = 16.0
+offset_bottom = -931.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect10" type="ColorRect" parent="Node2D" unique_id=802800296]
+offset_left = -200.0
+offset_top = -1013.0001
+offset_right = -112.0
+offset_bottom = -825.0001
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect11" type="ColorRect" parent="Node2D" unique_id=1018729057]
+offset_left = -72.8728
+offset_top = -905.5354
+offset_right = 15.127197
+offset_bottom = -837.34424
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect12" type="ColorRect" parent="Node2D" unique_id=1078881331]
+offset_left = 106.999756
+offset_top = -1068.9999
+offset_right = 194.99976
+offset_bottom = -880.9999
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect13" type="ColorRect" parent="Node2D" unique_id=824051417]
+offset_left = -77.0
+offset_top = -1640.0
+offset_right = 11.0
+offset_bottom = -1452.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect14" type="ColorRect" parent="Node2D" unique_id=1624356867]
+offset_left = -205.0
+offset_top = -1534.0001
+offset_right = -117.0
+offset_bottom = -1346.0001
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect15" type="ColorRect" parent="Node2D" unique_id=1359641345]
+offset_left = -77.8728
+offset_top = -1426.5354
+offset_right = 10.127197
+offset_bottom = -1358.3442
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect16" type="ColorRect" parent="Node2D" unique_id=2084212153]
+offset_left = 101.999756
+offset_top = -1589.9999
+offset_right = 189.99976
+offset_bottom = -1401.9999
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect17" type="ColorRect" parent="Node2D" unique_id=1785466750]
+offset_left = -77.0
+offset_top = -1640.0
+offset_right = 11.0
+offset_bottom = -1452.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect18" type="ColorRect" parent="Node2D" unique_id=1588761218]
+offset_left = -205.0
+offset_top = -1534.0001
+offset_right = -117.0
+offset_bottom = -1346.0001
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect19" type="ColorRect" parent="Node2D" unique_id=1131502525]
+offset_left = -77.8728
+offset_top = -1426.5354
+offset_right = 10.127197
+offset_bottom = -1358.3442
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect20" type="ColorRect" parent="Node2D" unique_id=50454822]
+offset_left = 101.999756
+offset_top = -1589.9999
+offset_right = 189.99976
+offset_bottom = -1401.9999
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D11" type="Node2D" parent="Node2D" unique_id=1049588973]
+position = Vector2(288, 744)
+rotation = 0.21930948
+
+[node name="Node2D" type="Node2D" parent="Node2D/Node2D11" unique_id=1481981152]
+position = Vector2(-3161.0002, 1403.0001)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D" unique_id=572040114]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D" unique_id=1251810081]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D" unique_id=114710699]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D" unique_id=1735673255]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D2" type="Node2D" parent="Node2D/Node2D11" unique_id=92412954]
+position = Vector2(-2858, 1234.9999)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D2" unique_id=756170513]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D2" unique_id=381932826]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D2" unique_id=603960561]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D2" unique_id=504969379]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D3" type="Node2D" parent="Node2D/Node2D11" unique_id=1583938121]
+position = Vector2(-2567, 1048.0001)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D3" unique_id=913592501]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D3" unique_id=149405432]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D3" unique_id=334007442]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D3" unique_id=969486729]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D4" type="Node2D" parent="Node2D/Node2D11" unique_id=98204092]
+position = Vector2(-2297, 886.0001)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D4" unique_id=208542583]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D4" unique_id=1035701320]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D4" unique_id=42152629]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D4" unique_id=1610862782]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D5" type="Node2D" parent="Node2D/Node2D11" unique_id=1098214005]
+position = Vector2(-2058.0002, 739)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D5" unique_id=1542064633]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D5" unique_id=1835717929]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D5" unique_id=1841297710]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D5" unique_id=38366521]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D6" type="Node2D" parent="Node2D/Node2D11" unique_id=2058075564]
+position = Vector2(-1795.0002, 610)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D6" unique_id=201767631]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D6" unique_id=138574239]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D6" unique_id=1033322780]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D6" unique_id=2031769767]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D7" type="Node2D" parent="Node2D/Node2D11" unique_id=412014568]
+position = Vector2(-1479, 491)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D7" unique_id=232248537]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D7" unique_id=132468851]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D7" unique_id=470761173]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D7" unique_id=377826185]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D8" type="Node2D" parent="Node2D/Node2D11" unique_id=1762348029]
+position = Vector2(-1216, 344)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D8" unique_id=2030733116]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D8" unique_id=1484183975]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D8" unique_id=695119808]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D8" unique_id=690033619]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D9" type="Node2D" parent="Node2D/Node2D11" unique_id=1798194966]
+position = Vector2(-922, 185)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D9" unique_id=1209570382]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D9" unique_id=1482800917]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D9" unique_id=1997944459]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D9" unique_id=1785704831]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="Node2D10" type="Node2D" parent="Node2D/Node2D11" unique_id=1121593486]
+position = Vector2(-646, 56)
+rotation = -2.0943952
+
+[node name="ColorRect21" type="ColorRect" parent="Node2D/Node2D11/Node2D10" unique_id=456424572]
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = 88.0
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect22" type="ColorRect" parent="Node2D/Node2D11/Node2D10" unique_id=1461092488]
+offset_left = -151.0
+offset_top = 5.999878
+offset_right = -63.0
+offset_bottom = 193.99988
+rotation = -0.8543094
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect23" type="ColorRect" parent="Node2D/Node2D11/Node2D10" unique_id=1363464010]
+offset_left = -23.872803
+offset_top = 113.4646
+offset_right = 64.1272
+offset_bottom = 181.65576
+rotation = -0.7070373
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[node name="ColorRect24" type="ColorRect" parent="Node2D/Node2D11/Node2D10" unique_id=1089410412]
+offset_left = 155.99976
+offset_top = -49.999878
+offset_right = 243.99976
+offset_bottom = 138.00012
+rotation = 0.95875156
+color = Color(1, 0.8745098, 0.32941177, 0.25882354)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

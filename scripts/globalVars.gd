@@ -4,7 +4,9 @@ var currentJerboa : JerboaPlayer = null
 
 var Spells = {}
 
-var unlockedSpells = []
+var unlockedSpells = [[1,0,0,1,0]]
+
+var playedRooms = []
 
 var SpellSource = [
 	{"name":"Super Jump",
@@ -14,12 +16,26 @@ var SpellSource = [
 	 "scene":  preload("res://scenes/spells/superjump.tscn")},
 	{"name":"Stairway Creation",
 	"texture":preload("res://art/upgrade/stair.png"),
-	"desc":"[B,A,A] Creates a stairway infront of you", "code" : [1,0,0], "scene" : preload("res://scenes/spells/stairwaycreation.tscn")}
+	"desc":"[B,A,A] Creates a stairway infront of you",
+	"code" : [1,0,0],
+	"scene" : preload("res://scenes/spells/stairwaycreation.tscn")
+	},
+	{"name":"Grappling Hook",
+	"texture":preload("res://art/upgrade/stair.png"),
+	"desc":"[B,A,A,B,A] Brings you UP!",
+	"code" : [1,0,0,1,0],
+	"scene" : preload("res://scenes/spells/grapplingHook.tscn")
+	}
 	
 ]
 
 var rooms = [
-	{"neededSpells":[[0,1,0]],"path":"res://scenes/rooms/bigJumpRoomOne.tscn"}
+	{"neededSpells":[[0,1,0]],"path":"res://scenes/rooms/bigJumpRoomOne.tscn"},
+	{"neededSpells":[[0,1,0]],"path":"res://scenes/rooms/bigJumpRoomTwo.tscn"},
+	{"neededSpells":[[0,1,0]],"path":"res://scenes/rooms/bigJumpRoomThree.tscn"},
+	{"neededSpells":[[1,0,0]],"path":"res://scenes/rooms/stairsroom1.tscn"},
+	{"neededSpells":[[1,0,0]],"path":"res://scenes/rooms/stairsroom2.tscn"},
+	{"neededSpells":[[1,0,0,1,0]],"path":"res://scenes/rooms/grapplinghookroom1.tscn"}
 ]
 
 func _ready() -> void:
@@ -33,5 +49,7 @@ func getValidRooms() -> Array[int]:
 		for C in I["neededSpells"]:
 			if not C in unlockedSpells:
 				valid = false
-		if valid: roomsWow.append(rooms.find(I))
+		if valid: 
+			if not rooms.find(I) in playedRooms:
+				roomsWow.append(rooms.find(I))
 	return roomsWow
