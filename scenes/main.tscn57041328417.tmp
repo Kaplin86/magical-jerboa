@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://qncvxxlewi13"]
+
+[ext_resource type="PackedScene" uid="uid://djpj3uvtlnmfa" path="res://scenes/player/jerboa.tscn" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://vymndjqb0srr" path="res://scripts/spellManager.gd" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bwocctxqtkuur" path="res://scenes/inbetween_room.tscn" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://buo2nnx07fwqw" path="res://scripts/currentSpellsList.gd" id="4_tbgi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(54, 436.5)
+
+[node name="Node2D" type="Node2D" unique_id=1805573875]
+
+[node name="InbetweenRoom" parent="." unique_id=142929678 instance=ExtResource("4_jyhfs")]
+position = Vector2(-411, 427)
+
+[node name="CharacterBody2D" parent="." unique_id=587312162 instance=ExtResource("2_sugp2")]
+position = Vector2(-661, 433)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Node2D" type="Node2D" parent="." unique_id=173448424 node_paths=PackedStringArray("jerboa")]
+position = Vector2(-661, 433)
+script = ExtResource("3_jyhfs")
+pallete = [Color(1, 0, 0, 1), Color(0, 0.3529412, 1, 1)]
+jerboa = NodePath("../CharacterBody2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1604031558]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=941036620]
+position = Vector2(-1037, 405.75)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1765873482]
+layer = 3
+script = ExtResource("4_tbgi4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1322772931]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 309.0
+offset_bottom = 528.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer" unique_id=1704516102]
+layout_mode = 2
+text = "gjdthg"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=683720566]
+offset_right = 40.0
+offset_bottom = 40.0

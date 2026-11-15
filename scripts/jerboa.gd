@@ -34,3 +34,5 @@ func _physics_process(delta: float) -> void:
 			velocity.x = lastVelocity.x * 0.5
 			
 			velocity.x *= -1
+	
+	

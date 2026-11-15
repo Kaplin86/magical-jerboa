@@ -8,21 +8,24 @@ var unlockedSpells = []
 
 var playedRooms = []
 
+var previousUnlockedSPells = []
+signal unlockedSpellsChanged
+
 var SpellSource = [
 	{"name":"Super Jump",
-	"desc":"[A,B,A] Propels you high into the air!",
+	"desc":"[[color=red]A[/color],[color=blue]B[/color],[color=red]A[/color]] Propels you high into the air!",
 	"code" : [0,1,0],
 	"texture": preload("res://art/upgrade/bigboost.png"),
 	 "scene":  preload("res://scenes/spells/superjump.tscn")},
 	{"name":"Stairway Creation",
 	"texture":preload("res://art/upgrade/stair.png"),
-	"desc":"[B,A,A] Creates a stairway infront of you",
+	"desc":"[[color=blue]B[/color],[color=red]A[/color],[color=red]A[/color]] Creates a stairway infront of you",
 	"code" : [1,0,0],
 	"scene" : preload("res://scenes/spells/stairwaycreation.tscn")
 	},
 	{"name":"Grappling Hook",
 	"texture":preload("res://art/upgrade/grappling.png"),
-	"desc":"[B,A,A,B,A] Brings you UP!",
+	"desc":"[[color=blue]B[/color],[color=red]A[/color],[color=red]A[/color],[color=blue]B[/color],[color=red]A[/color]] Brings you UP!",
 	"code" : [1,0,0,1,0],
 	"scene" : preload("res://scenes/spells/grapplingHook.tscn")
 	}
@@ -32,7 +35,7 @@ var SpellSource = [
 var rooms = [
 	{"neededSpells":[[0,1,0]],"path":"res://scenes/rooms/bigJumpRoomOne.tscn"},
 	{"neededSpells":[[0,1,0]],"path":"res://scenes/rooms/bigJumpRoomTwo.tscn"},
-	{"neededSpells":[[0,1,0]],"path":"res://scenes/rooms/bigJumpRoomThree.tscn"},
+	{"neededSpells":[[0,1,0],[1,0,0]],"path":"res://scenes/rooms/bigJumpRoomThree.tscn"},
 	{"neededSpells":[[1,0,0]],"path":"res://scenes/rooms/stairsroom1.tscn"},
 	{"neededSpells":[[1,0,0]],"path":"res://scenes/rooms/stairsroom2.tscn"},
 	{"neededSpells":[[1,0,0,1,0]],"path":"res://scenes/rooms/grapplinghookroom1.tscn"},
@@ -61,3 +64,8 @@ func getGainableSpeller() -> Array[int]:
 		if not I.get("code") in unlockedSpells:
 			speller.append(SpellSource.find(I))
 	return speller
+
+func _process(delta: float) -> void:
+	if previousUnlockedSPells != unlockedSpells:
+		previousUnlockedSPells = unlockedSpells.duplicate(true)
+		unlockedSpellsChanged.emit()

@@ -3,9 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://lrhkxj4kbo7x" path="res://art/purewhitejerboa.png" id="1_3d1i7"]
 [ext_resource type="Script" uid="uid://cu37h2jn7o353" path="res://scripts/main_menu.gd" id="1_48ign"]
 [ext_resource type="Texture2D" uid="uid://cl8t6tufh6qlm" path="res://art/LOGO.svg" id="1_qkhwq"]
+[ext_resource type="Texture2D" uid="uid://d2ef1l12o5ik3" path="res://art/weirdborderthing.png" id="4_l7wge"]
 
 [node name="Node2D" type="Node2D" unique_id=1762813452]
 script = ExtResource("1_48ign")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1590950755]
+offset_right = 1152.0
+offset_bottom = 649.0
+color = Color(0.59469044, 0.38941714, 4.813075e-07, 1)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=835934066]
 offset_left = 240.0
@@ -14,16 +20,17 @@ offset_right = 911.0
 offset_bottom = 766.0
 color = Color(0, 0, 0, 0.3529412)
 
-[node name="Purewhitejerboa" type="Sprite2D" parent="." unique_id=1814211808]
-position = Vector2(746, 161.00002)
-rotation = -0.1370411
-scale = Vector2(0.40380448, 0.40380448)
-texture = ExtResource("1_3d1i7")
-
 [node name="Logo" type="Sprite2D" parent="." unique_id=82844426]
 position = Vector2(570, 182.00003)
 scale = Vector2(0.528193, 0.528193)
 texture = ExtResource("1_qkhwq")
+
+[node name="Purewhitejerboa" type="Sprite2D" parent="Logo" unique_id=1814211808]
+show_behind_parent = true
+position = Vector2(333.21155, -39.75821)
+rotation = -0.1370411
+scale = Vector2(0.76450175, 0.76450175)
+texture = ExtResource("1_3d1i7")
 
 [node name="Button" type="Button" parent="." unique_id=1111156286]
 offset_left = 408.0
@@ -33,4 +40,39 @@ offset_bottom = 468.0
 theme_override_font_sizes/font_size = 54
 text = "Play"
 
+[node name="Button2" type="Button" parent="." unique_id=585556970]
+offset_left = 410.0
+offset_top = 528.0
+offset_right = 760.0
+offset_bottom = 610.0
+theme_override_font_sizes/font_size = 54
+text = "Tutorial"
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=917704747]
+modulate = Color(1, 1, 1, 0.4862745)
+repeat_size = Vector2(0, 752.94)
+autoscroll = Vector2(0, 180)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=56838267]
+offset_left = 1024.0
+offset_top = -100.99999
+offset_right = 1059.0
+offset_bottom = 98.06338
+scale = Vector2(3.7827148, 3.7827148)
+texture = ExtResource("4_l7wge")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Parallax2D" unique_id=351621367]
+offset_left = -3.0
+offset_top = -100.99999
+offset_right = 32.0
+offset_bottom = 98.06338
+scale = Vector2(3.7827148, 3.7827148)
+texture = ExtResource("4_l7wge")
+stretch_mode = 1
+flip_h = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
