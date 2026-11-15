@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5yl3tp6intq6"
-path="res://.godot/imported/magician-41104_1280.png-54430a7d29d4e37b52e6f85fdf26f081.ctex"
+path="res://.godot/imported/magician-41104_1280.png-9f4a88376f6659a9c8bfffc2e582f800.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tempAssetsReplaceLater/magician-41104_1280.png"
-dest_files=["res://.godot/imported/magician-41104_1280.png-54430a7d29d4e37b52e6f85fdf26f081.ctex"]
+source_file="res://art/magician-41104_1280.png"
+dest_files=["res://.godot/imported/magician-41104_1280.png-9f4a88376f6659a9c8bfffc2e582f800.ctex"]
 
 [params]
 

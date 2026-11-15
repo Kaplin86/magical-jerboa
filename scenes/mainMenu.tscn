@@ -34,19 +34,11 @@ texture = ExtResource("1_3d1i7")
 
 [node name="Button" type="Button" parent="." unique_id=1111156286]
 offset_left = 408.0
-offset_top = 386.0
+offset_top = 449.0
 offset_right = 758.0
-offset_bottom = 468.0
+offset_bottom = 531.0
 theme_override_font_sizes/font_size = 54
 text = "Play"
-
-[node name="Button2" type="Button" parent="." unique_id=585556970]
-offset_left = 410.0
-offset_top = 528.0
-offset_right = 760.0
-offset_bottom = 610.0
-theme_override_font_sizes/font_size = 54
-text = "Tutorial"
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=917704747]
 modulate = Color(1, 1, 1, 0.4862745)
@@ -74,5 +66,3 @@ stretch_mode = 1
 flip_h = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

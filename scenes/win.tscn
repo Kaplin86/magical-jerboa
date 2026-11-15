@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dq0gaa7d747bw"]
+
+[ext_resource type="Texture2D" uid="uid://d2ef1l12o5ik3" path="res://art/weirdborderthing.png" id="1_r4oei"]
+
+[node name="Node2D" type="Node2D" unique_id=150008444]
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=559499767]
+offset_right = 1152.0
+offset_bottom = 649.0
+color = Color(0.59469044, 0.38941714, 4.813075e-07, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1581297476]
+offset_left = 240.0
+offset_top = -65.0
+offset_right = 911.0
+offset_bottom = 766.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=394752460]
+modulate = Color(1, 1, 1, 0.4862745)
+repeat_size = Vector2(0, 752.94)
+autoscroll = Vector2(0, 180)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1215506825]
+offset_left = 1024.0
+offset_top = -100.99999
+offset_right = 1059.0
+offset_bottom = 98.06338
+scale = Vector2(3.7827148, 3.7827148)
+texture = ExtResource("1_r4oei")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Parallax2D" unique_id=2009449760]
+offset_left = -3.0
+offset_top = -100.99999
+offset_right = 32.0
+offset_bottom = 98.06338
+scale = Vector2(3.7827148, 3.7827148)
+texture = ExtResource("1_r4oei")
+stretch_mode = 1
+flip_h = true

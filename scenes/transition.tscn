@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://vxysnnnw4gry"]
+
+[ext_resource type="Script" uid="uid://bq0nr8nt5yt1l" path="res://scripts/transition.gd" id="1_f0i4t"]
+[ext_resource type="Texture2D" uid="uid://lrhkxj4kbo7x" path="res://art/purewhitejerboa.png" id="1_rerct"]
+[ext_resource type="Shader" uid="uid://dhvuappfwp2dc" path="res://shaders/glass.gdshader" id="3_px735"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_px735"]
+shader = ExtResource("3_px735")
+shader_parameter/fall_progress = 0.0
+shader_parameter/pieces_x = 5
+shader_parameter/pieces_y = 3
+shader_parameter/gravity = 2.2
+shader_parameter/scatter = 0.22
+shader_parameter/rotation_amount = 1.0
+shader_parameter/point_jitter = 0.34
+shader_parameter/delay_variation = 0.28
+shader_parameter/edge_thickness = 0.01
+shader_parameter/edge_brightness = 0.0
+shader_parameter/alpha_fade = 0.0
+
+[sub_resource type="Gradient" id="Gradient_xmi56"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_62yky"]
+gradient = SubResource("Gradient_xmi56")
+
+[sub_resource type="Gradient" id="Gradient_mm1bc"]
+offsets = PackedFloat32Array(0, 0.08, 0.996)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0, 0.5921569, 1, 1, 0.12941177)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mti6b"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4kxuq"]
+noise = SubResource("FastNoiseLite_mti6b")
+color_ramp = SubResource("Gradient_mm1bc")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mm1bc"]
+viewport_path = NodePath("SubViewport")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1138209270]
+layer = 4
+script = ExtResource("1_f0i4t")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1233777873]
+transparent_bg = true
+size = Vector2i(1152, 652)
+
+[node name="Shader" type="TextureRect" parent="SubViewport" unique_id=1196869486]
+unique_name_in_owner = true
+clip_children = 1
+material = SubResource("ShaderMaterial_px735")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_62yky")
+
+[node name="Plate" type="ColorRect" parent="SubViewport/Shader" unique_id=1300376239]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 1180.0
+offset_bottom = 680.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Purewhitejerboa" type="Sprite2D" parent="SubViewport/Shader/Plate" unique_id=24482053]
+self_modulate = Color(0, 0, 18.892157, 1)
+clip_children = 1
+position = Vector2(930, 484)
+rotation = -0.06518618
+texture = ExtResource("1_rerct")
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/Shader/Plate/Purewhitejerboa" unique_id=1514390376]
+offset_left = -244.0
+offset_top = -181.0
+offset_right = 225.0
+offset_bottom = 174.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/Shader/Plate" unique_id=675390479]
+layout_mode = 0
+offset_right = 1182.0
+offset_bottom = 673.0
+texture = SubResource("NoiseTexture2D_4kxuq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1266611148]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = SubResource("ViewportTexture_mm1bc")

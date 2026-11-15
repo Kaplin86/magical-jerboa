@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dch0n0ra8mkbw"
+path="res://.godot/imported/Electro Cabello.mp3-679cc949618fea856c426139cafdbf16.mp3str"
+
+[deps]
+
+source_file="res://music/Electro Cabello.mp3"
+dest_files=["res://.godot/imported/Electro Cabello.mp3-679cc949618fea856c426139cafdbf16.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

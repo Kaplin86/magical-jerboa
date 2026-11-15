@@ -7,15 +7,33 @@ var horizSpeed = 300
 var left = false
 var flatlineZoom = 1
 
+var lastAudio = 0.0
+
 func _physics_process(delta: float) -> void:
+	lastAudio += delta
 	if is_on_floor():
 		var input = false
 		if Input.is_action_pressed("right"):
 			velocity -= Vector2(-horizSpeed,1000 * jumpPower)
 			left = false
+			input = true
+			var sfx = load("res://sfx/sound"+str(randi_range(2,8))+".mp3")
+			var newSFX = AudioStreamPlayer2D.new()
+			newSFX.stream = sfx
+			add_child(newSFX)
+			newSFX.play()
+			newSFX.volume_db = 1
 		elif Input.is_action_pressed("left"):
+			print("boing")
 			velocity -= Vector2(horizSpeed,1000 * jumpPower)
 			left = true
+			input = true
+			var sfx = load("res://sfx/sound"+str(randi_range(2,8))+".mp3")
+			var newSFX = AudioStreamPlayer2D.new()
+			newSFX.stream = sfx
+			add_child(newSFX)
+			newSFX.play()
+			newSFX.volume_db = 1
 		if !input:
 			velocity.x = lerp(velocity.x,0.0,delta * 5)
 	if !is_on_floor():
@@ -36,5 +54,9 @@ func _physics_process(delta: float) -> void:
 			velocity.x = lastVelocity.x * 0.5
 			
 			velocity.x *= -1
-	
-	
+	if $Camera2D.zoom.x > 1.4:
+		$DiscoLounge.volume_linear = lerp($DiscoLounge.volume_linear,0.8,delta * 20)
+		$ElectroCabello.volume_linear = lerp($ElectroCabello.volume_linear,0.0,delta * 20)
+	else:
+		$DiscoLounge.volume_linear = lerp($DiscoLounge.volume_linear,0.0,delta * 20)
+		$ElectroCabello.volume_linear = lerp($ElectroCabello.volume_linear,0.8,delta * 20)

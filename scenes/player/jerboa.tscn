@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://djpj3uvtlnmfa"]
 
 [ext_resource type="Script" uid="uid://wagjw523qaxp" path="res://scripts/jerboa.gd" id="1_38uba"]
-[ext_resource type="Texture2D" uid="uid://blpre7sj5d5qq" path="res://tempAssetsReplaceLater/largest-jerb.png" id="2_c6qlh"]
-[ext_resource type="Texture2D" uid="uid://5yl3tp6intq6" path="res://tempAssetsReplaceLater/magician-41104_1280.png" id="3_r3oju"]
+[ext_resource type="Texture2D" uid="uid://blpre7sj5d5qq" path="res://art/largest-jerb.png" id="2_c6qlh"]
+[ext_resource type="Texture2D" uid="uid://5yl3tp6intq6" path="res://art/magician-41104_1280.png" id="3_r3oju"]
+[ext_resource type="AudioStream" uid="uid://dh0k0h8k3icsg" path="res://music/Disco Lounge.mp3" id="4_r3oju"]
+[ext_resource type="AudioStream" uid="uid://dch0n0ra8mkbw" path="res://music/Electro Cabello.mp3" id="5_1b0uw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kxuq"]
 radius = 34.0
@@ -40,12 +42,18 @@ offset_top = -283.0
 offset_right = -306.0
 offset_bottom = 270.0
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1920049314]
-offset_left = -551.0
-offset_top = -263.0
-offset_right = -511.0
-offset_bottom = -223.0
-
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=411369318]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="DiscoLounge" type="AudioStreamPlayer2D" parent="." unique_id=120681346]
+position = Vector2(0, -1)
+stream = ExtResource("4_r3oju")
+volume_db = -80.0
+autoplay = true
+
+[node name="ElectroCabello" type="AudioStreamPlayer2D" parent="." unique_id=1045128457]
+position = Vector2(-1, -1)
+stream = ExtResource("5_1b0uw")
+volume_db = -80.0
+autoplay = true
