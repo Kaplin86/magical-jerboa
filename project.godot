@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalVars="*uid://cx5br6cijwego"
 Transition="*uid://vxysnnnw4gry"
+AutomaticTimeout="*uid://bmqh4slrd4ufy"
 
 [display]
 

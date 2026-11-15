@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bmqh4slrd4ufy"]
+
+[ext_resource type="Script" uid="uid://i0yjeh10e368" path="res://scripts/automaticTimeout.gd" id="1_ne3gl"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2025298139]
+script = ExtResource("1_ne3gl")
+
+[node name="Label" type="Label" parent="." unique_id=1410315358]
+offset_left = 264.0
+offset_top = 237.0
+offset_right = 915.0
+offset_bottom = 315.0
+theme_override_font_sizes/font_size = 57
+text = "SELF DESTRUCTING IN...
+5"
+horizontal_alignment = 1
