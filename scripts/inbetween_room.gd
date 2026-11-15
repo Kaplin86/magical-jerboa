@@ -3,6 +3,7 @@ extends Node2D
 @export var itemAreas : Array[UpgradeUnlockers] = []
 
 var haveThings = true
+var last = false
 
 func _ready() -> void:
 	var options = GlobalVars.getGainableSpeller()
@@ -32,6 +33,7 @@ func _ready() -> void:
 		_onchosen(-1)
 	elif !haveThings:
 		_onchosen(-1)
+		
 
 func _process(delta: float) -> void:
 	var hovering = false
@@ -70,7 +72,13 @@ func _onchosen(upgrade : int) -> void:
 		newInbetween.haveThings = !haveThings
 		add_child(newInbetween)
 		newInbetween.global_position = node.find_child("ExitPoint").global_position - newInbetween.find_child("Entry").position
-		
-		
+	else:
+		last = true
 	
 	$ColorRect.queue_free()
+
+
+func _on_area_2d_6_body_entered(body: Node2D) -> void:
+	if last:
+		if body is JerboaPlayer:
+			Transition.transition("res://scenes/win.tscn")

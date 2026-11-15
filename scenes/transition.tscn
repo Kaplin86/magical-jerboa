@@ -6,7 +6,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_px735"]
 shader = ExtResource("3_px735")
-shader_parameter/fall_progress = 0.0
+shader_parameter/fall_progress = 1.0
 shader_parameter/pieces_x = 5
 shader_parameter/pieces_y = 3
 shader_parameter/gravity = 2.2
@@ -16,7 +16,7 @@ shader_parameter/point_jitter = 0.34
 shader_parameter/delay_variation = 0.28
 shader_parameter/edge_thickness = 0.01
 shader_parameter/edge_brightness = 0.0
-shader_parameter/alpha_fade = 0.0
+shader_parameter/alpha_fade = 1.0
 
 [sub_resource type="Gradient" id="Gradient_xmi56"]
 
@@ -58,7 +58,6 @@ texture = SubResource("GradientTexture2D_62yky")
 
 [node name="Plate" type="ColorRect" parent="SubViewport/Shader" unique_id=1300376239]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -15.0
 offset_top = -15.0
@@ -68,18 +67,9 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Purewhitejerboa" type="Sprite2D" parent="SubViewport/Shader/Plate" unique_id=24482053]
-self_modulate = Color(0, 0, 18.892157, 1)
-clip_children = 1
 position = Vector2(930, 484)
 rotation = -0.06518618
 texture = ExtResource("1_rerct")
-
-[node name="ColorRect" type="ColorRect" parent="SubViewport/Shader/Plate/Purewhitejerboa" unique_id=1514390376]
-offset_left = -244.0
-offset_top = -181.0
-offset_right = 225.0
-offset_bottom = 174.0
-mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="SubViewport/Shader/Plate" unique_id=675390479]
 layout_mode = 0
