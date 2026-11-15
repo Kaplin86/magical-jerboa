@@ -185,6 +185,7 @@ color = Color(1, 1, 1, 0.47843137)
 [node name="Area2D5" type="Area2D" parent="." unique_id=1788875466]
 position = Vector2(241, 61)
 script = ExtResource("5_jriq3")
+upgrade = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=313012310]
 position = Vector2(1, 0)

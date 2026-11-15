@@ -1,3 +1,36 @@
 [gd_scene format=3 uid="uid://urapcutt2an1"]
 
+[ext_resource type="Texture2D" uid="uid://lrhkxj4kbo7x" path="res://art/purewhitejerboa.png" id="1_3d1i7"]
+[ext_resource type="Script" uid="uid://cu37h2jn7o353" path="res://scripts/main_menu.gd" id="1_48ign"]
+[ext_resource type="Texture2D" uid="uid://cl8t6tufh6qlm" path="res://art/LOGO.svg" id="1_qkhwq"]
+
 [node name="Node2D" type="Node2D" unique_id=1762813452]
+script = ExtResource("1_48ign")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=835934066]
+offset_left = 240.0
+offset_top = -65.0
+offset_right = 911.0
+offset_bottom = 766.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="Purewhitejerboa" type="Sprite2D" parent="." unique_id=1814211808]
+position = Vector2(746, 161.00002)
+rotation = -0.1370411
+scale = Vector2(0.40380448, 0.40380448)
+texture = ExtResource("1_3d1i7")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=82844426]
+position = Vector2(570, 182.00003)
+scale = Vector2(0.528193, 0.528193)
+texture = ExtResource("1_qkhwq")
+
+[node name="Button" type="Button" parent="." unique_id=1111156286]
+offset_left = 408.0
+offset_top = 386.0
+offset_right = 758.0
+offset_bottom = 468.0
+theme_override_font_sizes/font_size = 54
+text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

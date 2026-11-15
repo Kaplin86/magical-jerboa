@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://vymndjqb0srr" path="res://scripts/spellManager.gd" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bwocctxqtkuur" path="res://scenes/inbetween_room.tscn" id="4_jyhfs"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(54, 436.5)
+
 [node name="Node2D" type="Node2D" unique_id=1805573875]
 
 [node name="InbetweenRoom" parent="." unique_id=142929678 instance=ExtResource("4_jyhfs")]
@@ -18,3 +21,9 @@ collision_mask = 3
 position = Vector2(-661, 433)
 script = ExtResource("3_jyhfs")
 jerboa = NodePath("../CharacterBody2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1604031558]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=941036620]
+position = Vector2(-1037, 405.75)
+shape = SubResource("RectangleShape2D_4kxuq")

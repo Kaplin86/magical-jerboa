@@ -4,7 +4,7 @@ var currentJerboa : JerboaPlayer = null
 
 var Spells = {}
 
-var unlockedSpells = [[1,0,0,1,0]]
+var unlockedSpells = []
 
 var playedRooms = []
 
@@ -21,7 +21,7 @@ var SpellSource = [
 	"scene" : preload("res://scenes/spells/stairwaycreation.tscn")
 	},
 	{"name":"Grappling Hook",
-	"texture":preload("res://art/upgrade/stair.png"),
+	"texture":preload("res://art/upgrade/grappling.png"),
 	"desc":"[B,A,A,B,A] Brings you UP!",
 	"code" : [1,0,0,1,0],
 	"scene" : preload("res://scenes/spells/grapplingHook.tscn")
@@ -53,3 +53,10 @@ func getValidRooms() -> Array[int]:
 			if not rooms.find(I) in playedRooms:
 				roomsWow.append(rooms.find(I))
 	return roomsWow
+
+func getGainableSpeller() -> Array[int]:
+	var speller : Array[int] = []
+	for I in SpellSource:
+		if not I.get("code") in unlockedSpells:
+			speller.append(SpellSource.find(I))
+	return speller
